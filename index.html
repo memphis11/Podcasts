@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -26,9 +27,6 @@
             margin: 0;
             font-size: 2rem;
         }
-        .logo {
-            margin-top: 1rem;
-        }
         .logo img {
             height: 220px;
             width: auto;
@@ -40,69 +38,57 @@
             margin: 2rem 0;
         }
         .container {
-            max-width: 600px;
+            max-width: 900px;
             width: 90%;
             margin: 0 auto 2rem auto;
             display: flex;
-            flex-direction: column;
+            flex-direction: row; /* Horizontal statt vertikal */
+            justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: 1rem; /* Abstand zwischen Buttons */
+            flex-wrap: wrap; /* Damit es bei kleinen Screens umbricht */
         }
         .video-button {
             background-color: #5cad7e;
             color: white;
             border: none;
-            padding: 1.5rem 1rem;
+            padding: 1rem 1.5rem;
             font-size: 1.2rem;
             border-radius: 8px;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s ease;
-            display: block;
-            max-width: 300px;
-            width: 100%;
+            display: inline-block;
+            min-width: 200px;
         }
         .video-button:hover {
             background-color: #666666;
         }
         @media (max-width: 600px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-            .video-button {
-                font-size: 1rem;
-                padding: 1.2rem 1rem;
+            .container {
+                flex-direction: column; /* Auf kleinen Screens wieder untereinander */
             }
         }
     </style>
 </head>
 <body>
     <header>
-		<h3> </h3>
-		<h3> . </h3>
         <h1>IT mit Tiefgang – Larsi deckt auf</h1>
-		<h1> </h1>
-				<h3></h3>
         <div class="logo">
-            <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/LuLu.PNG" alt="Logo">
-        </div>
-				<h3></h3>
-		<h3></h3>
-
-		<h3></h3>
-		<h3></h3>
-		<h3>Ich bin der Larsi – ein Microsoft-Trainer und jemand, der nicht aufhört zu fragen</h3>
-		<h3>In diesem Podcast geht’s nicht nur um schnelle Lösungen, sondern um echtes Verständnis</h3>
-		<h3> ............................... </h3>
-		<h4>Ich decke auf, was hinter den Kulissen der IT passiert, denke weiter, wo andere aufhören – und bringe Licht ins Dunkel der IT-Welt.</h4>
-
+            <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/L      </div>
+        <h3>Ich bin der Larsi – ein Microsoft-Trainer und jemand, der nicht aufhört zu fragen</h3>
+        <h3>In diesem Podcast geht’s nicht nur um schnelle Lösungen, sondern um echtes Verständnis</h3>
+        <h3>...............................</h3>
+        <h4>Ich decke auf, was hinter den Kulissen der IT passiert, denke weiter, wo andere aufhören – und bringe Licht ins Dunkel der IT-Welt.</h4>
     </header>
+
     <hr>
+
     <div class="container">
-       <div class="container">
-        <a class="video-button" href="https://larsrichter-my.sharepoint.com/:v:/g/personal/lr_l--r_de/EWz7hfWlaw5PjacX1EERR4wB_YkBiGMzImOoRSixQmSc2w?e=FBmHJe" target="" rel="noopener noreferrer">Schultermobilisation - Rotation</a>
-        <a class="video-button" href="https://larsrichter-my.sharepoint.com/:v:/g/personal/lr_l--r_de/EfzPzhlNwaZKvnN6Bi49Y5MBZc4hSBlIZ3HTjgSXIq84ow?e=XnNf2r" target="" rel="noopener noreferrer">Schultermobilisation - Felxion</a>
-        <a class="video-button" href="https://larsrichter-my.sharepoint.com/:v:/g/personal/lr_l--r_de/EZoL-Kyqo3ZAreI6Tg5yo9wB8bXBkEQXRpKMmzA_V2PJ1A?e=O6CofK" target="" rel="noopener noreferrer">Schulterstabilisation - Flexion</a>
+        https://dein-link-zum-podcast.deSchultermobilisation - Rotation</a>
+        https://dein-link-zum-podcast.deSchultermobilisation - Flexion</a>
+        https://dein-link-zum-podcast.deSchulterstabilisation - Flexion</a>
     </div>
 </body>
 </html>
+``
