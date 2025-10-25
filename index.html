@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -27,6 +26,9 @@
             margin: 0;
             font-size: 2rem;
         }
+        .logo {
+            margin-top: 1rem;
+        }
         .logo img {
             height: 220px;
             width: auto;
@@ -38,57 +40,66 @@
             margin: 2rem 0;
         }
         .container {
-            max-width: 900px;
+            max-width: 600px;
             width: 90%;
             margin: 0 auto 2rem auto;
             display: flex;
-            flex-direction: row; /* Horizontal statt vertikal */
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem; /* Abstand zwischen Buttons */
-            flex-wrap: wrap; /* Damit es bei kleinen Screens umbricht */
+            gap: 1rem;
         }
         .video-button {
             background-color: #5cad7e;
             color: white;
             border: none;
-            padding: 1rem 1.5rem;
+            padding: 1.5rem 1rem;
             font-size: 1.2rem;
             border-radius: 8px;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s ease;
-            display: inline-block;
-            min-width: 200px;
+            display: block;
+            max-width: 300px;
+            width: 100%;
         }
         .video-button:hover {
             background-color: #666666;
         }
         @media (max-width: 600px) {
-            .container {
-                flex-direction: column; /* Auf kleinen Screens wieder untereinander */
+            h1 {
+                font-size: 1.5rem;
+            }
+            .video-button {
+                font-size: 1rem;
+                padding: 1.2rem 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
+		<h3> </h3>
+		<h3> . </h3>
         <h1>IT mit Tiefgang – Larsi deckt auf</h1>
+		<h1> </h1>
+				<h3></h3>
         <div class="logo">
-            <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/L      </div>
-        <h3>Ich bin der Larsi – ein Microsoft-Trainer und jemand, der nicht aufhört zu fragen</h3>
-        <h3>In diesem Podcast geht’s nicht nur um schnelle Lösungen, sondern um echtes Verständnis</h3>
-        <h3>...............................</h3>
-        <h4>Ich decke auf, was hinter den Kulissen der IT passiert, denke weiter, wo andere aufhören – und bringe Licht ins Dunkel der IT-Welt.</h4>
+            <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/LuLu.PNG" alt="Logo">
+        </div>
+				<h3></h3>
+		<h3></h3>
+
+		<h3></h3>
+		<h3></h3>
+		<h3>Ich bin der Larsi – ein Microsoft-Trainer und jemand, der nicht aufhört zu fragen</h3>
+		<h3>In diesem Podcast geht’s nicht nur um schnelle Lösungen, sondern um echtes Verständnis</h3>
+		<h3> ............................... </h3>
+		<h4>Ich decke auf, was hinter den Kulissen der IT passiert, denke weiter, wo andere aufhören – und bringe Licht ins Dunkel der IT-Welt.</h4>
+
     </header>
-
     <hr>
-
     <div class="container">
-        https://dein-link-zum-podcast.deSchultermobilisation - Rotation</a>
-        https://dein-link-zum-podcast.deSchultermobilisation - Flexion</a>
-        https://dein-link-zum-podcast.deSchulterstabilisation - Flexion</a>
+       
     </div>
 </body>
 </html>
-``
