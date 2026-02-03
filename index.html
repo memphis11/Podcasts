@@ -135,7 +135,16 @@
         .right .panel + .panel{ margin-top:16px; }
         .right .panel h4{ margin:0 0 10px 0; color:#2e2e2e; }
         .right .panel p{ margin:0 0 16px 0; color:#555; }
-        .right .panel .video-button{ width:100%; }
+
+        /* >>> Button in rechter Spalte KLEINER <<< */
+        .right .panel .video-button{
+            width: 160px;        /* kleinere Breite */
+            height: 44px;        /* kleinere Höhe */
+            font-size: 0.95rem;  /* etwas kleinere Schrift */
+            min-width: unset;    /* überschreibt die globale min-width */
+            padding: 0 12px;     /* kompakter */
+            margin: 0 auto;      /* zentriert im Panel */
+        }
 
         /* Responsive: unter 900px einspaltig */
         @media (max-width: 900px){
@@ -193,14 +202,16 @@
             <aside class="right">
                 <div class="panel">
                     <h4>Powershell Skripte</h4>
-                    <p>Hier geht es zu den ultimativen Skripten:.</p>
+                    <p>Hier geht es zu den ultimativen Skripten:</p>
                     <a class="video-button" href="#" role="button" aria-label="zur Skriptsammlung">zu den Skripten</a>
                 </div>
 
-             <!--    <div class="panel"> -->
-             <!--       <h4>hier entsteht bald was neues</h4>  -->
-             <!--       <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/LuLu.PNG" alt="Logo" style="width:100%; height:auto; border-radius:8px;">  -->
-             <!--   </div>  -->
+                <!-- Beispiel für ein zweites Panel
+                <div class="panel">
+                    <h4>Hier entsteht bald was Neues</h4>
+                    <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/LuLu.PNG" alt="Logo" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+                -->
             </aside>
 
         </section>
