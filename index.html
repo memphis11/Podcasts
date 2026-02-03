@@ -42,28 +42,16 @@
             display: inline-block;
         }
 
+        /* Linie unter dem Header – unten etwas weniger Abstand,
+           damit die Section-Überschrift näher heranrückt */
         hr {
             width: 60%;
             border: none;
             border-top: 8px solid var(--brand);
-            margin: 2rem 0;
-        }
-        .hr1 {
-            width: 20%;
-            border: none;
-            border-top: 8px solid var(--brand);
-            margin: 2rem 0;
+            margin: 1.2rem 0 0.6rem; /* vorher 2rem 0; jetzt kleiner */
         }
 
-        /* ===== Button / CTA ===== */
-        .container {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-            width: 100%;
-        }
+        /* ===== Buttons / CTA (global) ===== */
         .video-button {
             background-color: var(--brand);
             color: white;
@@ -76,14 +64,20 @@
             transition: background-color 0.25s ease;
             height: 56px;
             min-width: 220px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            line-height: 1;
         }
         .video-button:hover { background-color: #4da46f; }
-        .video-text { margin-top: 0.5rem; font-size: 0.9rem; color: #333; text-align: center; }
-        @media (max-width: 600px) {
-            .video-button { width: 100%; }
+
+        /* kompakter Button (kleiner) */
+        .btn-small{
+            height: 40px;
+            min-width: unset;
+            padding: 0 14px;
+            font-size: 0.92rem;
+            border-radius: 999px; /* pill */
         }
 
         /* ===== Zweispaltiger Themen-Block ===== */
@@ -92,10 +86,10 @@
             display:flex;
             justify-content:center;
         }
+        /* Überschrift der Section – weniger Top-Abstand */
         .section-title{
             color: var(--brand);
-            margin-top: 40px;
-            margin-bottom: 10px;
+            margin: 12px 0 10px; /* höher an die Linie gerückt */
         }
         .two-col{
             max-width: var(--maxw);
@@ -126,6 +120,19 @@
         .two-col .left h3,
         .two-col .left h4{ color: var(--brand); margin:10px 0; }
 
+        /* CTA-Zeile: Text + kleiner Button nebeneinander */
+        .cta-row{
+            display:flex;
+            align-items:center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .cta-row h4{
+            margin: 0;
+            color: var(--brand);
+        }
+
         .right .panel{
             background:#ffffff;
             border:1px solid #e6e6e6;
@@ -136,14 +143,15 @@
         .right .panel h4{ margin:0 0 10px 0; color:#2e2e2e; }
         .right .panel p{ margin:0 0 16px 0; color:#555; }
 
-        /* >>> Button in rechter Spalte KLEINER <<< */
+        /* kleiner Button NUR im rechten Panel (falls du ihn dort behalten willst) */
         .right .panel .video-button{
-            width: 160px;        /* kleinere Breite */
-            height: 44px;        /* kleinere Höhe */
-            font-size: 0.95rem;  /* etwas kleinere Schrift */
-            min-width: unset;    /* überschreibt die globale min-width */
-            padding: 0 12px;     /* kompakter */
-            margin: 0 auto;      /* zentriert im Panel */
+            width: 160px;
+            height: 44px;
+            font-size: 0.95rem;
+            min-width: unset;
+            padding: 0 12px;
+            margin: 0 auto;
+            border-radius: 999px;
         }
 
         /* Responsive: unter 900px einspaltig */
@@ -152,13 +160,13 @@
                 grid-template-columns: 1fr;
                 gap:20px;
             }
+            /* im mobilen Layout die CTA-Zeile untereinander */
+            .cta-row{ gap:10px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h3> </h3>
-        <h3>  </h3>
         <h1 style="color: #5cad7e;">Mit Red Bull in der Hand</h1>
         <h1 style="color: #5cad7e;">--- Lars öffnet die Büchse der Pandora ---</h1>
         <br>
@@ -172,7 +180,7 @@
 
     <hr>
 
-    <!-- ===== Überschrift über beiden Spalten ===== -->
+    <!-- ===== Überschrift über beiden Spalten (höher positioniert) ===== -->
     <h2 class="section-title">Themen die wirklich Interessieren</h2>
 
     <!-- ===== Zweispaltiger Bereich: Links Text, Rechts anderes ===== -->
@@ -194,8 +202,12 @@
                 <h5 style="color: #5cad7e;">Keine Sorge – es geht nicht darum, euch zu digitalen Schurken zu machen. Vielmehr will ich zeigen, wo die Schwachstellen lauern und wie man sie clever absichert.</h5>
 
                 <br>
-                <h3 style="color: #5cad7e;">Schnappt euch ein Red Bull, werft den Token in den Ring – und macht euch schon mal bereit</h3>
-                <h4 style="color: #5cad7e;">Bald wird die Büchse geöffnet!</h4>
+
+                <!-- Text + Button NEBENEINANDER -->
+                <div class="cta-row">
+                    <h4>Bald wird die Büchse geöffnet!</h4>
+                    <a class="video-button btn-small" href="#" role="button" aria-label="zur Skriptsammlung">zu den Skripten</a>
+                </div>
             </div>
 
             <!-- Rechte Spalte -->
@@ -206,22 +218,15 @@
                     <a class="video-button" href="#" role="button" aria-label="zur Skriptsammlung">zu den Skripten</a>
                 </div>
 
-                <!-- Beispiel für ein zweites Panel
+                <!-- Optional: zweites Panel
                 <div class="panel">
                     <h4>Hier entsteht bald was Neues</h4>
-                    <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/LuLu.PNG" alt="Logo" style="width:100%; height:auto; border-radius:8px;">
+                    <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/LuLu.PNG" alt="Teaser" style="width:100%; height:auto; border-radius:8px;">
                 </div>
                 -->
             </aside>
 
         </section>
     </div>
-
-    <!-- Optional: Weitere Buttons/Zeilen -->
-    <!--
-    <div class="container">
-        <a class="video-button" href="" target="" rel="noopener noreferrer">Video - in Kürze verfügbar</a>
-    </div>
-    -->
 </body>
 </html>
